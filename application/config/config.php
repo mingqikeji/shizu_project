@@ -25,6 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = '';
 
+$config['system_name'] = '管理系统1.0';
 /*
 |--------------------------------------------------------------------------
 | Index File
