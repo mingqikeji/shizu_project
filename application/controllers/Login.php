@@ -11,4 +11,9 @@ class Login extends MY_Controller
 	{
 		$this->load->view('login/index');
 	}
+
+	public function log()
+	{
+		throw new Exception("log is here!");
+	}
 }

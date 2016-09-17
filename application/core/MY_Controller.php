@@ -5,6 +5,7 @@ class MY_Controller extends CI_Controller
 {
 	private $_current_class = '';
 	private $_current_method = '';
+	public $view_data = array();
 
 	public function __construct()
 	{
@@ -17,16 +18,20 @@ class MY_Controller extends CI_Controller
 		$this->_current_class = $this->router->fetch_class();
 		$this->_current_method = $this->router->fetch_method();
 		$path = $this->_current_class . "_" . $this->_current_method;
+		$this->view_data['controller_method'] = $path;
 		if(in_array($path, $this->noAuthPath()))
 		{
 			return;
 		}
 
 		//TODO 验证用户是否此页面的权限
-		//
-		//
-		
-		die("Auth validing!");
+		$user_id = $this->session->userdata('id_user');
+		if(!$user_id)
+		{
+			redirect(base_url("/login/index"));
+		}
+
+		//die("Auth validing!");
 	}
 
 	/**
@@ -37,7 +42,7 @@ class MY_Controller extends CI_Controller
 	{
 		return array(
 			"login_index",
-			"index_index"
+			"user_login"
 		);
 	}
 }

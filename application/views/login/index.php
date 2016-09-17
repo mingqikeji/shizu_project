@@ -10,7 +10,7 @@
 		<div class="container">
 	    <form class="form-signin" role="form" method="post" action="/user/login">
 	        <h3 class="form-signin-heading text-center"><font color="#155799"><?php echo $this->config->item('system_name'); ?></font></h3>
-	        <input type="email" class="form-control" placeholder="用户名" style="margin-top: 16px;" name="username" required autofocus>
+	        <input type="text" class="form-control" placeholder="用户名" style="margin-top: 16px;" name="username" required autofocus>
 	        <input type="password" class="form-control margin-top-10" style="margin-top: 16px;" name="password" placeholder="密码" required>
 	        <div class="checkbox">
 	            <label class="rember-color">
